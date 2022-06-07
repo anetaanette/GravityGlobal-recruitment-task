@@ -56,6 +56,28 @@ body {
         background: linear-gradient(to bottom left, #ddbdb5 30%, #74a1a4 100%);
       }
     }
+    > #popup {
+      height: 130px;
+      width: 400px;
+      padding: 2rem;
+      background-color: white;
+      position: absolute;
+      cursor: pointer;
+      margin: 0 auto;
+      border-radius: 2rem;
+      //text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      > h2 {
+        font-size: 2.1rem;
+      }
+      > p {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
 
