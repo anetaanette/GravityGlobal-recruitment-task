@@ -84,9 +84,18 @@ body > main > #popup {
   padding: 2rem;
   background-color: white;
   position: absolute;
-  cursor: pointer;
-  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2rem;
+  z-index: 10;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,12 +112,44 @@ body > main > #popup {
   gap: 0.6rem;
 }
 
+body > main > #popup > .x-button {
+  border: none;
+  background: none;
+  outline: none;
+  border-radius: 0.5rem;
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  cursor: pointer;
+}
+
 body > main > #popup > h2 {
   font-size: 2.1rem;
 }
 
 body > main > #popup > p {
   font-size: 1.2rem;
+}
+
+body > main > #popup.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+body > main > #overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+body > main > #overlay.active {
+  pointer-events: all;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1000px) {

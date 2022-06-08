@@ -62,21 +62,54 @@ body {
       padding: 2rem;
       background-color: white;
       position: absolute;
-      cursor: pointer;
-      margin: 0 auto;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: 200ms ease-in-out;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 2rem;
-      //text-align: center;
+      z-index: 10;
+      background-color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 0.6rem;
+      > .x-button {
+        border: none;
+        background: none;
+        outline: none;
+        border-radius: 0.5rem;
+        position: absolute;
+        right: 5%;
+        top: 15%;
+        cursor: pointer;
+      }
       > h2 {
         font-size: 2.1rem;
       }
       > p {
         font-size: 1.2rem;
       }
+    }
+    > #popup.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    > #overlay {
+      position: fixed;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+    }
+    > #overlay.active {
+      pointer-events: all;
+      opacity: 1;
     }
   }
 }

@@ -42,12 +42,27 @@
           protection for modern and legacy infrastructures and SaaS platforms,
           managed via a single app with no hardware required.
         </p>
-        <a href="#" id="button" onclick="onclickPopup()">Button</a>
+        <a
+          href="#"
+          id="button"
+          data-modal-target="#popup"
+          onclick="onclickPopup()"
+          >Button</a
+        >
       </section>
       <section id="popup">
+        <button
+          type="button"
+          data-close-button
+          class="x-button"
+          onclick="self.close();"
+        >
+          &#10006;
+        </button>
         <h2>Alert!</h2>
         <p>You have clicked this button X times.</p>
       </section>
+      <div id="overlay"></div>
     </main>
     <script src="./src/js/main.js"></script>
   </body>
