@@ -42,11 +42,8 @@
           protection for modern and legacy infrastructures and SaaS platforms,
           managed via a single app with no hardware required.
         </p>
-        <a
-          href="#"
-          id="button"
-          data-modal-target="#popup"
-          onclick="onclickPopup()"
+
+        <a href="#" id="button" class="button" data-modal-target="#popup"
           >Button</a
         >
       </section>
@@ -54,8 +51,12 @@
         <button type="button" data-close-button class="x-button" id="x-button">
           &#10006;
         </button>
+        <div class="countNum" id="countNum"></div>
         <h2>Alert!</h2>
-        <p>You have clicked this button X times.</p>
+        <p>
+          You have clicked this button
+          <span class="inner-html" id="innerNumber">0</span> times.
+        </p>
       </section>
       <div id="overlay"></div>
     </main>
