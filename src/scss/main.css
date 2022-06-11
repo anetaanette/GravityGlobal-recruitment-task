@@ -79,11 +79,10 @@ body > main > .right > #button {
 }
 
 body > main > #popup {
-  height: 130px;
-  width: 400px;
+  height: 200px;
+  width: 420px;
   padding: 2rem;
   background-color: white;
-  position: absolute;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -109,7 +108,7 @@ body > main > #popup {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.6rem;
+  gap: 1rem;
 }
 
 body > main > #popup > .x-button {
@@ -124,11 +123,29 @@ body > main > #popup > .x-button {
 }
 
 body > main > #popup > h2 {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
 }
 
 body > main > #popup > p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+body > main > #popup > #reset-btn {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  border: 2px solid #ddbdb5;
+}
+
+body > main > #popup > #reset-btn > #reset {
+  text-decoration: none;
+  color: black;
+}
+
+body > main > #popup > #reset-btn.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 body > main > #popup.active {

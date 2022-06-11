@@ -50,8 +50,30 @@ function closePopup(popup) {
 
 const countBtn = document.getElementById('button');
 let innerNum = document.getElementById('innerNumber');
+let reset = document.getElementById('reset-btn');
+let counter = localStorage.getItem('innerNum') || 0;
+
+
 countBtn.addEventListener("click", countUp);
 
 function countUp() {
     innerNum.innerText++;
+    if (innerNum.innerText > 5) {
+        reset.classList.add('active');
+    }
+    localStorage.setItem('innerNum', innerNum);
 }
+
+reset.addEventListener("click", resetToZero);
+
+function resetToZero() {
+    innerNum.innerText = 0;
+}
+
+// console.log(localStorage.getItem('innerNum'));
+
+
+
+window.addEventListener('load', (event) => {
+    localStorage.getItem('counter', counter);
+  }); 
