@@ -1,9 +1,8 @@
 console.log("kesjfbnkj");
 
+
 const openPopupButtons = document.querySelectorAll('[data-modal-target]');
 const closePopupButtons = document.querySelectorAll('[data-close-button]');
-
-
 const closePopupButton = document.getElementById('x-button');
 const overlay = document.getElementById('overlay');
 
@@ -51,29 +50,48 @@ function closePopup(popup) {
 const countBtn = document.getElementById('button');
 let innerNum = document.getElementById('innerNumber');
 let reset = document.getElementById('reset-btn');
-let counter = localStorage.getItem('innerNum') || 0;
+
+counter = localStorage.getItem("innerNum");
+let clickCounter = counter;
+
+ function clickInit() {
+    
+    if (clickCounter == undefined) {
+      localStorage.setItem("innerNum", clickCounter);
+      innerNum.innerText = 0;
+    } else {
+      counter = parseInt(clickCounter);
+    } document.querySelector("innerNumber").innerHTML = innerNum;
+  } 
+  
 
 
 countBtn.addEventListener("click", countUp);
 
 function countUp() {
+
     innerNum.innerText++;
+
+    localStorage.setItem('innerNum', innerNum.innerText);
+
     if (innerNum.innerText > 5) {
         reset.classList.add('active');
     }
-    localStorage.setItem('innerNum', innerNum);
+    if (innerNum.innerText <= 5) {
+        reset.classList.remove('active');
+    }
 }
 
+console.log(localStorage);
 reset.addEventListener("click", resetToZero);
 
 function resetToZero() {
     innerNum.innerText = 0;
+    localStorage.clear();
 }
 
-// console.log(localStorage.getItem('innerNum'));
+ if (window.location.reload) { 
+   innerNum.innerText = clickCounter;
+}  
 
-
-
-window.addEventListener('load', (event) => {
-    localStorage.getItem('counter', counter);
-  }); 
+ window.addEventListener('onload', clickInit);

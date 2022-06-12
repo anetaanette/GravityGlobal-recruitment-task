@@ -76,6 +76,8 @@ body > main > .right > #button {
   text-align: center;
   background: -webkit-gradient(linear, right top, left bottom, color-stop(30%, #ddbdb5), to(#74a1a4));
   background: linear-gradient(to bottom left, #ddbdb5 30%, #74a1a4 100%);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(22, 21, 21, 0.2), 0 6px 20px 0 rgba(241, 238, 238, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(22, 21, 21, 0.2), 0 6px 20px 0 rgba(241, 238, 238, 0.19);
 }
 
 body > main > #popup {
