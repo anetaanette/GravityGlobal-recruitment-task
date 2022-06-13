@@ -1,10 +1,11 @@
-console.log("kesjfbnkj");
-
-
 const openPopupButtons = document.querySelectorAll('[data-modal-target]');
 const closePopupButtons = document.querySelectorAll('[data-close-button]');
 const closePopupButton = document.getElementById('x-button');
 const overlay = document.getElementById('overlay');
+
+const countBtn = document.getElementById('button');
+let innerNum = document.getElementById('innerNumber');
+let reset = document.getElementById('reset-btn');
 
 openPopupButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -47,10 +48,6 @@ function closePopup(popup) {
 };
 
 
-const countBtn = document.getElementById('button');
-let innerNum = document.getElementById('innerNumber');
-let reset = document.getElementById('reset-btn');
-
 counter = localStorage.getItem("innerNum");
 let clickCounter = counter;
 
@@ -65,13 +62,10 @@ let clickCounter = counter;
   } 
   
 
-
 countBtn.addEventListener("click", countUp);
 
 function countUp() {
-
     innerNum.innerText++;
-
     localStorage.setItem('innerNum', innerNum.innerText);
 
     if (innerNum.innerText > 5) {
@@ -82,7 +76,6 @@ function countUp() {
     }
 }
 
-console.log(localStorage);
 reset.addEventListener("click", resetToZero);
 
 function resetToZero() {
@@ -95,3 +88,5 @@ function resetToZero() {
 }  
 
  window.addEventListener('onload', clickInit);
+
+ console.log(localStorage);
