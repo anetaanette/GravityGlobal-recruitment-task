@@ -47,22 +47,23 @@ function closePopup(popup) {
     overlay.classList.remove('active');
 };
 
+//let clickCounter = counter;
+// counter = localStorage.getItem("innerNum");
 
-counter = localStorage.getItem("innerNum");
-let clickCounter = counter;
-
+let counter = localStorage.getItem("innerNum");
  function clickInit() {
     
     if (clickCounter == undefined) {
-      localStorage.setItem("innerNum", clickCounter);
+      localStorage.setItem("innerNum", counter);
       innerNum.innerText = 0;
     } else {
-      counter = parseInt(clickCounter);
+      counter = parseInt(counter);
     } document.querySelector("innerNumber").innerHTML = innerNum;
   } 
-  
+
 
 countBtn.addEventListener("click", countUp);
+
 
 function countUp() {
     innerNum.innerText++;
@@ -84,7 +85,7 @@ function resetToZero() {
 }
 
  if (window.location.reload) { 
-   innerNum.innerText = clickCounter;
+   innerNum.innerText = counter;
 }  
 
  window.addEventListener('onload', clickInit);
