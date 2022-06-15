@@ -35,6 +35,7 @@ closePopupButtons.forEach(button => {
     })
 })
 
+// ACTIVE/ NOT ACTIVE POPUP
 function openPopup(popup) {
     if (popup == null) return
     popup.classList.add('active');
@@ -47,9 +48,7 @@ function closePopup(popup) {
     overlay.classList.remove('active');
 };
 
-//let clickCounter = counter;
-// counter = localStorage.getItem("innerNum");
-
+// STORAGE FUNCTION
 let counter = localStorage.getItem("innerNum");
  function clickInit() {
     
@@ -61,9 +60,8 @@ let counter = localStorage.getItem("innerNum");
     } document.querySelector("innerNumber").innerHTML = innerNum;
   } 
 
-
+// COUNTS CLICKS 
 countBtn.addEventListener("click", countUp);
-
 
 function countUp() {
     innerNum.innerText++;
@@ -77,6 +75,7 @@ function countUp() {
     }
 }
 
+// RESETS CLICKS
 reset.addEventListener("click", resetToZero);
 
 function resetToZero() {
@@ -89,5 +88,3 @@ function resetToZero() {
 }  
 
  window.addEventListener('onload', clickInit);
-
- console.log(localStorage);
